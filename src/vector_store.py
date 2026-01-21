@@ -2,16 +2,29 @@ import os
 import shutil
 from typing import List, Optional
 from langchain_community.vectorstores import FAISS
+from langchain_community.embeddings import OllamaEmbeddings
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.documents import Document
 from src.config import (
     EMBEDDING_MODEL_NAME, 
     EMBEDDING_DEVICE, 
-    VECTOR_DB_DIR
+    VECTOR_DB_DIR,
+    OLLAMA_BASE_URL
 )
 
 def get_embeddings():
-    """Initialize HuggingFace embeddings."""
+    """Initialize embeddings (HuggingFace or Ollama)."""
+    # Robust check for Nomic Embeddings (Ollama)
+    model_name = EMBEDDING_MODEL_NAME.strip().lower()
+    
+    if "nomic-embed-text" in model_name:
+        print(f" usando Ollama embeddings con: {EMBEDDING_MODEL_NAME}")
+        return OllamaEmbeddings(
+            model=EMBEDDING_MODEL_NAME,
+            base_url=OLLAMA_BASE_URL
+        )
+    
+    print(f" usando HuggingFace embeddings con: {EMBEDDING_MODEL_NAME}")
     return HuggingFaceEmbeddings(
         model_name=EMBEDDING_MODEL_NAME,
         model_kwargs={'device': EMBEDDING_DEVICE},
