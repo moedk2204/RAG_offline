@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  rag-app:
+    build: .
+    container_name: chat-rag-ai
+    ports:
+      - "7860:7860"
+    volumes:
+      - ./data:/app/data
+      - ./.env:/app/.env
+      - hf_cache:/app/data/hf_cache
+    restart: always
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+volumes:
+  hf_cache:

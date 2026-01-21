@@ -1,0 +1,16 @@
+python-dotenv
+langchain
+langchain-community
+langchain-core
+langchain-text-splitters
+langchain-huggingface
+transformers
+huggingface-hub
+faiss-cpu
+sentence-transformers
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+numpy
+requests
+gradio
+pypdf

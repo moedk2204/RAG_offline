@@ -1,0 +1,37 @@
+# --- Virtual environment ---
+myvenv/
+venv/
+.env/
+*.env
+
+# --- Local data folder ---
+lebanon_GeoHis/
+
+# --- Python cache ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- Jupyter Notebook checkpoints ---
+.ipynb_checkpoints/
+
+# --- VSCode ---
+.vscode/
+
+# --- Environment files ---
+*.env
+.env/
+
+# --- OS files ---
+.DS_Store
+Thumbs.db
+
+# --- FAISS indexes or model folders (if generated) ---
+*.faiss
+*.idx
+*.pkl
+models/
+data/vector_db/
+data/inputs/
+RAG_chatPDF/

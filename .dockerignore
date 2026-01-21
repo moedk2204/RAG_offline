@@ -1,0 +1,15 @@
+myvenv/
+venv/
+.env
+data/
+.git/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+.vscode/
+node_modules/
+*.faiss
+*.idx
+*.pkl
