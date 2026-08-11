@@ -16,7 +16,7 @@ INPUTS_DIR.mkdir(parents=True, exist_ok=True)
 VECTOR_DB_DIR.mkdir(parents=True, exist_ok=True)
 
 # Ollama Settings
-OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "gpt-oss:20b")
+OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "gemma4:31b-cloud")
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434")
 OLLAMA_TEMPERATURE = float(os.getenv("OLLAMA_TEMPERATURE", "0.1"))
 
